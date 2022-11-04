@@ -1,0 +1,54 @@
+.event-sponsors {
+
+    h3 {
+        font-size: clamp(30px, 3.2vw, 50px);
+        text-align: center;
+        border-bottom: 2px solid $green;
+    }
+
+    .sponsor-container .fl-post-feed {
+        margin: 20px 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 3vw;
+
+        .fl-post-feed-post {
+            border-bottom: 0;
+        }
+
+        .sponsors {
+            list-style: none;
+            align-self: center;
+            margin-bottom: 0;
+            img {
+                max-width: 260px;
+                width: 100%;
+                max-height: 150px;
+            }
+
+            @media (max-width: 600px) {
+                max-width: 140px;
+                margin: 10px;
+            }
+        }
+    }
+
+    .sponsor-container.silver-sponsors {
+        width: 100%;
+
+        ul {
+            flex-wrap: wrap;
+            row-gap: 30px;
+            li {
+                max-width: 20%;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

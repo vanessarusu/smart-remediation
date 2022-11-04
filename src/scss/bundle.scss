@@ -1,0 +1,216 @@
+@import 'components/colorswatch';
+@import 'components/speakers';
+@import 'components/sponsors';
+@import 'components/past-events';
+
+::selection {
+    background: darken($green, 5%);
+    color: white;
+}
+
+a {
+    transition: all 0.2s ease-in-out;
+}
+
+footer .fl-node-ubpvso7cm4j5 > .fl-row-content-wrap {
+    background-size: 70%;
+    @media (max-width: 768px) {
+        background-size: 90%;
+    }
+}
+
+
+//smart slider
+div#n2-ss-3 .n2-ss-control-bullet {
+    margin-left: 11%;
+
+    @media (max-width: 900px) {
+        margin-left: 0;
+        padding:0;
+        transform: scale(0.7);
+    }
+
+    @media (max-width: 1300px) {
+        // margin-left: 0;
+        transform: scale(0.85);
+    }
+}
+
+//testimonial slider
+div#n2-ss-2 .n2-ss-control-bullet {
+    // position: absolute;
+    margin-left: -25%;
+    // left: 0;
+    // right: 0;
+
+    @media (max-width: 1500px) {
+        margin-left: unset;
+        // margin-right: 20%;
+    }
+}
+
+
+
+
+//beaver builder ui dropdown fix
+.select2-results__options li {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+li a:hover {
+    text-decoration: none;
+}
+
+
+
+
+header li a {
+    &:focus, &:hover, &:active {
+        text-decoration: none;
+    }
+}
+
+
+
+
+
+
+//forms
+
+.custom-smart-form_wrapper {
+    .gform_title,
+    .gform_required_legend {
+        display: none;
+    }
+
+    .gform_fields > div {
+        margin-top: 1rem;
+    }
+
+    .gfield_label {
+        border-bottom: none;
+        font-size: 22px !important;
+        color: $black !important;
+        text-transform: uppercase;
+        font-weight: 400 !important;
+
+        @media (max-width: 1024px) {
+            font-size: 18px !important;
+        }
+
+        @media (max-width: 768px) {
+            text-align: left !important;
+            display: block !important;
+        }
+    }
+
+    .gfield_required.gfield_required_asterisk {
+        color: $black !important;
+        font-size: 22px !important;
+        @media (max-width: 1024px) {
+            font-size: 18px !important;
+        }
+    }
+
+    input, textarea, select {
+        border: 1px solid $black;
+        border-radius: 0 !important;
+        padding: 1rem;
+        min-height: 55px;
+        color: $black !important;
+        font-size: 20px !important;
+        background: white;
+        @media (max-width: 1024px) {
+            min-height: 40px !important;
+        }
+        @media (max-width: 768px) {
+            padding: 0.2rem !important;
+        }
+
+        & + label {
+            color: $black !important;
+            font-weight: 400 !important;
+            margin-top: 0.5rem;
+
+            @media (max-width: 768px) {
+                text-align: left !important;
+            }
+        }
+    }
+
+    .gform_footer {
+        justify-content: flex-end;
+        margin-top: 6rem !important;
+
+    }
+
+    input[type="submit"] {
+        min-width: 300px;
+        text-align: center !important;
+        display: block;
+        color: $green !important;
+        text-transform: uppercase;
+        font-weight: 400 !important;
+        letter-spacing: 1px;
+        font-family: 'proxima nova', Proxima Nova, sans-serif;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            color: white !important;
+        }
+    }
+
+    #field_submit {
+        justify-content: end;
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+}
+
+
+
+.custom-smart-form-newsletter_wrapper {
+    margin-top: -10px;
+    .gform_required_legend {
+        display: none;
+    }
+    input {
+        border: 1px solid white;
+        background: transparent;
+        border-radius: 0;
+        color: white;
+        font-size: 18px !important;
+        min-height: 40px;
+
+        &:focus, &:active {
+            background: transparent;
+            color: white;
+        }
+        &::placeholder {
+            color: white;
+            text-transform: uppercase;
+            font-size: 18px ;
+            ;
+        }
+    }
+
+    input[type="submit"] {
+        min-width: 200px;
+        text-align: center !important;
+        display: block;
+        color: white !important;
+        background: $green !important;
+        border: 1px solid white;
+        text-transform: uppercase;
+        font-weight: 400 !important;
+        letter-spacing: 1px;
+        font-family: 'proxima nova', Proxima Nova, sans-serif;
+        transition: all 0.2s ease-in-out;
+        margin-top: -10px;
+        &:hover {
+            color: white !important;
+        }
+    }
+}

@@ -1,0 +1,182 @@
+.event-speakers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 100px;
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+    }
+    // max-width: 1400px;
+    flex-wrap: wrap;
+    gap: clamp(8px, 4vw, 90px);
+    .speaker { 
+        margin-top: 20px;
+        @media(max-width: 768px) {
+            margin-top: 40px;
+        }
+    }
+    .speaker-image-wrapper {
+        position: relative;
+
+        .speaker-image-hover-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            background: rgba($green, 0.9);
+            color: white;
+            font-weight: 600;
+            padding: 20px;
+            line-height: 1.1;
+            font-size: clamp(16px, 1.6vw, 35px);
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+
+            > * {
+                align-self: center;
+            }     
+        }
+
+        &:hover {
+            .speaker-image-hover-content {
+                opacity: 1;
+            }
+        }
+        
+    }
+
+
+    .speaker-content-wrapper {
+        margin-top: 20px;
+        font-size: clamp(16px, 1.4vw, 26px);
+        line-height: 1.3;
+
+        ul {
+            margin: 10px 0 0;
+            
+            padding: 0;
+            display: flex;
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+            }
+
+            li {
+                list-style: none;
+                margin-right: 12px;
+                @media (max-width: 768px) {
+                    margin-right: 4px; 
+                }
+
+                a {
+                    font-weight: 600;
+                    &:hover {
+                        text-decoration: none;
+                        color: $black;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        p {
+            min-height: 100px;
+            @media (max-width: 768px) {
+                min-height: 40px;
+            }
+        }
+    }
+
+    .js-speaker-bio-content,
+    .js-speaker-abstract-content {
+        display: none;
+    }
+
+    .speaker-lightbox-content {
+        &.open {
+            position: fixed;
+            overflow-y: scroll;
+            z-index: 100;
+            display: block;
+            background: rgba($black, 0.8);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+
+            & > div {
+                align-self: center;
+                margin: 40px;
+                background: white;
+                max-width: 920px;
+                padding: 60px;
+                max-height: 85vh;
+                overflow-y: scroll;
+
+                @media (max-width: 768px) {
+                    margin: 200px 16px 40px;
+                    padding: 20px;
+                    height: unset;
+                    
+                }
+
+                font-size: clamp(14px, 1.4vw, 20px);
+                line-height: 1.3;
+                border: 1px solid #707070;
+                h4 {
+                    color: $black;
+                    font-size: clamp(20px, 2vw, 30px);
+                    line-height: 1.1;
+                    margin-bottom: 2rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .dismiss {
+                width: 50px;
+                height: 50px;
+                @media (max-width: 768px) {
+                    width: 32px;
+                    height: 32px;
+                    top: 0;
+                    right: 0;
+                    margin: 10px;
+                }
+                padding: 0;
+                position: absolute;
+                top: 2vh;
+                right: 2vw;
+                border: none;
+                cursor: pointer;
+                background: transparent;
+                z-index: 1000;
+
+                span {
+                    height: 3px;
+                    width: 100%;
+                    background: white;
+                    display: block;
+                    z-index: 10;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: rotate(45deg);
+                    pointer-events: none;
+                    &:last-of-type {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        
+    }
+}
